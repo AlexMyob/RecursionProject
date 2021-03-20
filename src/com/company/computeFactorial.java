@@ -1,5 +1,6 @@
 package com.company;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class computeFactorial {
@@ -31,24 +32,21 @@ public class computeFactorial {
 
     }
 
-    public static long factorial(int n) {
+    public static BigInteger factorial(int n) {
         if (n == 0) {
-            return 1;
+            return BigInteger.ONE;
         } else {
-            return n * factorial(n - 1); // Recursive call
+            return BigInteger.valueOf(n).multiply(factorial(n - 1)); // Recursive call
         }
     }
 
-    public static long nfactorial(int n) {
-        long temp = 1;
-
-        if (n == 0) {
-            return 1;
-        } else {
-            for (int i = 1; i <= n; i++) {
-                temp = temp * i;
-            }
-            return temp;
+    public static BigInteger nfactorial(int n) {
+        BigInteger temp = new BigInteger("1");
+        for (int i = 1; i <= n; i++) {
+            temp = temp.multiply(BigInteger.valueOf(i));
         }
+        return temp;
     }
 }
+
+
