@@ -31,7 +31,7 @@ public class computeFactorial {
 
     }
 
-    public static int factorial(int n) {
+    public static long factorial(int n) {
         if (n == 0) {
             return 1;
         } else {
@@ -39,13 +39,13 @@ public class computeFactorial {
         }
     }
 
-    public static int nfactorial(int n) {
-        int temp = 1;
+    public static long nfactorial(int n) {
+        long temp = 1;
 
         if (n == 0) {
             return 1;
         } else {
-            for (int i = 2; i <= n; i++) {
+            for (int i = 1; i <= n; i++) {
                 temp = temp * i;
             }
             return temp;
