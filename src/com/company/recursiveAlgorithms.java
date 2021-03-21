@@ -11,4 +11,27 @@ public class recursiveAlgorithms {
             return BigInteger.valueOf(n).multiply(factorial(n - 1)); //Recursive call
         }
     }
+
+    public static long fibonacci(long index) {
+        if (index == 0) // Base case
+            return 0;
+        else if (index == 1) // Base case
+            return 1;
+        else // Reduction and recursive calls
+            return fibonacci(index - 1) + fibonacci(index - 2);
+    }
+
+    public static boolean isPalindrome(String s) {
+        return isPalindrome(s, 0, s.length() - 1);
+    }
+
+    public static boolean isPalindrome(String s, int low, int high) {
+        if (high <= low) // Base case
+            return true;
+        else if (s.charAt(low) != s.charAt(high)) // Base case
+            return false;
+        else
+            return isPalindrome(s, low + 1, high - 1);
+    }
+
 }

@@ -12,4 +12,28 @@ public class iterativeAlgorithms {
         }
         return factorial;
     }
+
+    public static long nfibonacci(long index) {
+        long fib = 0;
+        if (index == 0) // Base case
+            return 0;
+        else if (index == 1) // Base case
+            return 1;
+        else {
+            fib = (index-1) + (index-2);
+        }
+        return fib;
+    }
+
+    public static boolean nisPalindrome(String s, int low, int high) {
+        for (int i = 0; i < s.length(); i++) {
+            if (high <= low) // Base case
+                return true;
+            else if (s.charAt(low) != s.charAt(high)) // Base case
+                return false;
+        }
+            return false;
+    }
+
 }
+
