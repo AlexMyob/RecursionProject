@@ -13,23 +13,22 @@ public class iterativeAlgorithms {
         return factorial;
     }
 
-    public static long nfibonacci(long index) {
-        long fib = 0;
+    public static BigInteger nfibonacci(long index) {
         long prevPrev = 0;
         long prev = 1;
         long currentValue = 0;
 
         if (index == 1) { // Base case
-            return 0;
+            return BigInteger.ZERO;
         } else if (index == 2) { // Base case
-            return 1;
+            return BigInteger.ONE;
         }
         for (int i = 2; i < index; i++) {
             currentValue = prevPrev + prev;
             prevPrev = prev;
             prev = currentValue;
         }
-        return currentValue;
+        return BigInteger.valueOf(currentValue);
     }
 
     public static boolean nisPalindrome(String s) {
@@ -42,6 +41,20 @@ public class iterativeAlgorithms {
             }
         }
         return true;
+    }
+
+    public static int recursiveBinarySearch(int[] list, int key, int low, int high) {
+        if (low > high) { // The list has been exhausted without a match
+            return low - 1;
+        }
+        int mid = (low + high) / 2;
+        if (key < list[mid]) {
+            return recursiveBinarySearch(list, key, low, mid - 1);
+        } else if (key == list[mid]) {
+            return mid;
+        } else {
+            return recursiveBinarySearch(list, key, mid + 1, high);
+        }
     }
 }
 

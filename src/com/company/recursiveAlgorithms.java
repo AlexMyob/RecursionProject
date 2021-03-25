@@ -4,6 +4,7 @@ import java.math.BigInteger;
 
 public class recursiveAlgorithms {
 
+
     public static BigInteger factorial(int n) {
         if (n == 0) { //base case
             return BigInteger.ONE;
@@ -12,13 +13,14 @@ public class recursiveAlgorithms {
         }
     }
 
-    public static long fibonacci(long index) {
-        if (index == 1) // Base case 1
-            return 0;
-        else if (index == 2) // Base case 2
-            return 1;
-        else // Reduction and recursive calls
-            return fibonacci(index - 1) + fibonacci(index - 2);
+    public static BigInteger fibonacci(int index) {
+        if (index == 1) {           // Base case 1
+            return BigInteger.ZERO;
+        } else if (index == 2) {    // Base case 2
+            return BigInteger.ONE;
+        } else {                    // Reduction and recursive calls
+            return fibonacci(index - 1).add(fibonacci(index - 2));
+        }
     }
 
     public static boolean isPalindrome(String s) {
@@ -33,5 +35,20 @@ public class recursiveAlgorithms {
         else
             return isPalindrome(s, low + 1, high - 1);
     }
+
+    public static int recursiveBinarySearch(int[] list, int key, int low, int high) {
+        if (low > high) { // The list has been exhausted without a match
+            return -low - 1;
+        }
+        int mid = (low + high) / 2;
+        if (key < list[mid]) {
+            return recursiveBinarySearch(list, key, low, mid - 1);
+        } else if (key == list[mid]) {
+            return mid;
+        } else {
+            return recursiveBinarySearch(list, key, mid + 1, high);
+        }
+    }
+
 
 }

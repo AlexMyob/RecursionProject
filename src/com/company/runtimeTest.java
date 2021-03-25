@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class runtimeTest {
@@ -95,5 +96,22 @@ public class runtimeTest {
         //Displaying runtimes of each method
         System.out.println("Recursive Method Runtime: " + this.recursiveRuntime + " ns");
         System.out.println("Iterative Method Runtime: " + this.iterativeRuntime + " ns");
+    }
+
+    public void binarySearchRuntime() {
+        int intarray[] = new int[1000];
+
+        for (int i = 1; i < intarray.length; i++) {
+            intarray[i] = i * 3;
+        }
+
+        System.out.println("Performing recursive binary search using recursive algorithm...");
+        this.initialTime = System.nanoTime(); //Setting the initial time to current system time
+
+        recursiveAlgorithms.recursiveBinarySearch(intarray, 2,3,4);
+
+        this.recursiveRuntime = System.nanoTime() - this.initialTime; //Calculating the runtime of the recursive method
+
+        System.out.println("Recursive Method Runtime: " + this.recursiveRuntime + " ns");
     }
 }
