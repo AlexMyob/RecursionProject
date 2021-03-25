@@ -13,9 +13,9 @@ public class recursiveAlgorithms {
     }
 
     public static long fibonacci(long index) {
-        if (index == 0) // Base case
+        if (index == 1) // Base case 1
             return 0;
-        else if (index == 1) // Base case
+        else if (index == 2) // Base case 2
             return 1;
         else // Reduction and recursive calls
             return fibonacci(index - 1) + fibonacci(index - 2);

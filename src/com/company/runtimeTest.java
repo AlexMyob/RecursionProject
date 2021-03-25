@@ -19,6 +19,7 @@ public class runtimeTest {
         this.initialTime = System.nanoTime(); //Setting initial time to current system time
 
         System.out.println("Factorial of " + n + " is " + recursiveAlgorithms.factorial(n)); //Running recursive method
+        System.out.println();
 
         this.recursiveRuntime = System.nanoTime() - this.initialTime; //Calculating the runtime of the recursive method
 
@@ -28,7 +29,9 @@ public class runtimeTest {
 
         System.out.println("Factorial of " + n + " is " + iterativeAlgorithms.nfactorial(n)); //Running iterative method
 
+
         this.iterativeRuntime = System.nanoTime() - this.initialTime; //Calculating the runtime of the iterative method
+        System.out.println();
 
         //Displaying runtimes of each method
         System.out.println("Recursive Method Runtime: " + this.recursiveRuntime + " ns");
@@ -45,6 +48,7 @@ public class runtimeTest {
         this.initialTime = System.nanoTime(); //Setting the initial time to current system time
 
         System.out.println("Fibonacci number at index " + index + " is " + recursiveAlgorithms.fibonacci(index));
+        System.out.println();
 
         this.recursiveRuntime = System.nanoTime() - this.initialTime; //Calculating the runtime of the recursive method
 
@@ -53,6 +57,7 @@ public class runtimeTest {
         this.initialTime = System.nanoTime(); //Setting the initial time to current system time
 
         System.out.println("Fibonacci number at index " + index + " is " + iterativeAlgorithms.nfibonacci(index));
+        System.out.println();
 
         this.iterativeRuntime = System.nanoTime() - this.initialTime; //Calculating the runtime of the iterative method
 
@@ -63,6 +68,7 @@ public class runtimeTest {
 
     public void ispalindromeRuntime() {
 
+        System.out.println("Checking if string is a palindrome using the recursive algorithm...");
         this.initialTime = System.nanoTime(); //Setting the initial time to current system time
 
         System.out.println("Is moon a palindrome? " + recursiveAlgorithms.isPalindrome("moon"));
@@ -70,9 +76,11 @@ public class runtimeTest {
         System.out.println("Is a a palindrome? " + recursiveAlgorithms.isPalindrome("a"));
         System.out.println("Is aba a palindrome? " + recursiveAlgorithms.isPalindrome("aba"));
         System.out.println("Is ab a palindrome? " + recursiveAlgorithms.isPalindrome("ab"));
+        System.out.println();
 
         this.recursiveRuntime = System.nanoTime() - this.initialTime; //Calculating the runtime of the recursive method
 
+        System.out.println("Checking if string is a palindrome using the iterative algorithm...");
         this.initialTime = System.nanoTime(); //Setting the initial time to current system time
 
         System.out.println("Is moon a palindrome? " + iterativeAlgorithms.nisPalindrome("moon"));
@@ -80,6 +88,7 @@ public class runtimeTest {
         System.out.println("Is a a palindrome? " + iterativeAlgorithms.nisPalindrome("a"));
         System.out.println("Is aba a palindrome? " + iterativeAlgorithms.nisPalindrome("aba"));
         System.out.println("Is ab a palindrome? " + iterativeAlgorithms.nisPalindrome("ab"));
+        System.out.println();
 
         this.iterativeRuntime = System.nanoTime() - this.initialTime; //Calculating the runtime of the iterative method
 

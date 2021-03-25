@@ -15,25 +15,35 @@ public class iterativeAlgorithms {
 
     public static long nfibonacci(long index) {
         long fib = 0;
-        if (index == 0) // Base case
+        long prevPrev = 0;
+        long prev = 1;
+        long currentValue = 0;
+
+        if (index == 1) { // Base case
             return 0;
-        else if (index == 1) // Base case
+        } else if (index == 2) { // Base case
             return 1;
-        else {
-            fib = (index-1) + (index-2);
         }
-        return fib;
+        for (int i = 2; i < index; i++) {
+            currentValue = prevPrev + prev;
+            prevPrev = prev;
+            prev = currentValue;
+        }
+        return currentValue;
     }
 
-    public static boolean nisPalindrome(String s, int low, int high) {
-        for (int i = 0; i < s.length(); i++) {
-            if (high <= low) // Base case
-                return true;
-            else if (s.charAt(low) != s.charAt(high)) // Base case
+    public static boolean nisPalindrome(String s) {
+        if (s == null) {
+            return false; //The string is empty
+        }
+        for (int i = 0, j = s.length() - 1; i < j; i++, j--) {
+            if (s.charAt(i) != s.charAt(j)) {
                 return false;
+            }
         }
-            return false;
+        return true;
     }
-
 }
+
+
 
