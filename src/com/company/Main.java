@@ -9,7 +9,7 @@ public class Main {
         testInstance.factorialRuntime(); //Test recursive and iterative factorial methods
         testInstance.fibonacciRuntime(); //Test recursive and iterative fibonacci methods
         testInstance.ispalindromeRuntime(); //Test recursive and iterative palindrome methods
-        testInstance.binarySearchRuntime();
+        testInstance.binarySearchRuntime(); //Test recursive and iterative binary search methods
     }
 }
 
