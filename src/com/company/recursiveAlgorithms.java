@@ -4,7 +4,6 @@ import java.math.BigInteger;
 
 public class recursiveAlgorithms {
 
-
     public static BigInteger factorial(int n) {
         if (n == 0) { //base case
             return BigInteger.ONE;
@@ -17,7 +16,7 @@ public class recursiveAlgorithms {
         if (index == 1) {           // Base case 1
             return BigInteger.ZERO;
         }
-        if (index == 2) {    // Base case 2
+        if (index <= 2) {    // Base case 2
             return BigInteger.ONE;
         } else {                    // Reduction and recursive calls
             return fibonacci(index - 1).add(fibonacci(index - 2));
@@ -56,6 +55,4 @@ public class recursiveAlgorithms {
             return recursiveBinarySearch(list, key, mid + 1, high);
         }
     }
-
-
 }
