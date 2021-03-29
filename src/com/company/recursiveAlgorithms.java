@@ -16,7 +16,8 @@ public class recursiveAlgorithms {
     public static BigInteger fibonacci(int index) {
         if (index == 1) {           // Base case 1
             return BigInteger.ZERO;
-        } else if (index == 2) {    // Base case 2
+        }
+        if (index == 2) {    // Base case 2
             return BigInteger.ONE;
         } else {                    // Reduction and recursive calls
             return fibonacci(index - 1).add(fibonacci(index - 2));
@@ -36,11 +37,17 @@ public class recursiveAlgorithms {
             return isPalindrome(s, low + 1, high - 1);
     }
 
+    public static int recursiveBinarySearch(int[] list, int key) {
+        int low = 0;
+        int high = list.length - 1;
+        return recursiveBinarySearch(list, key, low, high);
+    }
+
     public static int recursiveBinarySearch(int[] list, int key, int low, int high) {
-        if (low > high) { // The list has been exhausted without a match
-            return -low - 1;
-        }
         int mid = (low + high) / 2;
+        if (low > high) { // The list has been exhausted without a match
+            return -1;
+        }
         if (key < list[mid]) {
             return recursiveBinarySearch(list, key, low, mid - 1);
         } else if (key == list[mid]) {

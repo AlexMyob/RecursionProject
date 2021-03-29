@@ -1,8 +1,5 @@
 package com.company;
 
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class runtimeTest {
 
     //System time variables
@@ -11,85 +8,119 @@ public class runtimeTest {
     private long iterativeRuntime = 0;
 
     public void factorialRuntime() {
-        //Accept user input
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter a non-negative integer: ");
-        int n = input.nextInt();
-        System.out.println("Calculating factorial of " + n + " using the recursive function...");
+        int[] testArray = new int[20];
+
+        for (int i = 1; i < testArray.length; i++) {
+            testArray[i] = (int) (Math.random() * 9999);
+        }
+
+        System.out.println("Testing recursive factorial algorithm with 20 random values between 0 and 9999...");
 
         this.initialTime = System.nanoTime(); //Setting initial time to current system time
 
-        System.out.println("Factorial of " + n + " is " + recursiveAlgorithms.factorial(n)); //Running recursive method
-        System.out.println();
+        for (int j : testArray) {
+            System.out.println("Factorial of " + j + " is " + recursiveAlgorithms.factorial(j));
+        }
 
         this.recursiveRuntime = System.nanoTime() - this.initialTime; //Calculating the runtime of the recursive method
 
-        System.out.println("Calculating factorial of " + n + " using the iterative function...");
+        System.out.println("Testing recursive factorial algorithm with 20 random values between 0 and 9999...");
 
         this.initialTime = System.nanoTime(); //Setting the initial time to current system time
 
-        System.out.println("Factorial of " + n + " is " + iterativeAlgorithms.nfactorial(n)); //Running iterative method
-
+        for (int j : testArray) {
+            System.out.println("Factorial of " + j + " is " + iterativeAlgorithms.nfactorial(j));
+        }
 
         this.iterativeRuntime = System.nanoTime() - this.initialTime; //Calculating the runtime of the iterative method
         System.out.println();
 
         //Displaying runtimes of each method
         System.out.println("Recursive Method Runtime: " + this.recursiveRuntime + " ns");
-        System.out.println("Iterative Method Runtime: " + this.iterativeRuntime + " ns");
+        System.out.println("Iterative Method Runtime: " + this.iterativeRuntime + " ns" + "\n");
     }
 
     public void fibonacciRuntime() {
-        //Accept user input
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter an index for the Fibonacci number: ");
-        int index = input.nextInt();
-        System.out.println("Calculating the Fibonacci number at index " + index + " using the recursive method...");
+        int[] testArray = new int[20];
+
+        for (int i = 1; i < testArray.length; i++) {
+            testArray[i] = (int) (Math.random() * 10);
+        }
+
+        System.out.println("Testing recursive fibonacci algorithm with 20 random values between 0 and 9999...");
 
         this.initialTime = System.nanoTime(); //Setting the initial time to current system time
 
-        System.out.println("Fibonacci number at index " + index + " is " + recursiveAlgorithms.fibonacci(index));
-        System.out.println();
+        for (int j : testArray) {
+            System.out.println("Fibonacci number at index: " + j + " is " + recursiveAlgorithms.fibonacci(j));
+        }
 
         this.recursiveRuntime = System.nanoTime() - this.initialTime; //Calculating the runtime of the recursive method
 
-        System.out.println("Calculating the Fibonacci number at index " + index + " using the iterative method...");
+        System.out.println("Testing recursive fibonacci algorithm with 20 random values between 0 and 9999...");
 
         this.initialTime = System.nanoTime(); //Setting the initial time to current system time
 
-        System.out.println("Fibonacci number at index " + index + " is " + iterativeAlgorithms.nfibonacci(index));
-        System.out.println();
+        for (int j : testArray) {
+            System.out.println("Fibonacci number at index: " + j + " is " + iterativeAlgorithms.nfibonacci(j));
+        }
 
         this.iterativeRuntime = System.nanoTime() - this.initialTime; //Calculating the runtime of the iterative method
 
         //Displaying runtimes of each method
         System.out.println("Recursive Method Runtime: " + this.recursiveRuntime + " ns");
-        System.out.println("Iterative Method Runtime: " + this.iterativeRuntime + " ns");
+        System.out.println("Iterative Method Runtime: " + this.iterativeRuntime + " ns" + "\n");
     }
 
     public void ispalindromeRuntime() {
+        String[] testArray = new String[20];
 
-        System.out.println("Checking if string is a palindrome using the recursive algorithm...");
+        testArray[0] = "anna";
+        testArray[1] = "civic";
+        testArray[2] = "kayak";
+        testArray[3] = "did";
+        testArray[4] = "level";
+        testArray[5] = "bob";
+        testArray[6] = "racecar";
+        testArray[7] = "i did did i";
+        testArray[8] = "wow";
+        testArray[9] = "noon";
+        testArray[10] = "random sentence";
+        testArray[11] = "recursion is neat";
+        testArray[12] = "john went to the store";
+        testArray[13] = "delaware is the first state";
+        testArray[14] = "kent";
+        testArray[15] = "bobby";
+        testArray[16] = "frank";
+        testArray[17] = "ray";
+        testArray[18] = "nissan";
+        testArray[19] = "ford";
+
+        System.out.println("Checking 20 strings using ispalindrome recursive algorithm...");
+
         this.initialTime = System.nanoTime(); //Setting the initial time to current system time
 
-        System.out.println("Is moon a palindrome? " + recursiveAlgorithms.isPalindrome("moon"));
-        System.out.println("Is noon a palindrome? " + recursiveAlgorithms.isPalindrome("noon"));
-        System.out.println("Is a a palindrome? " + recursiveAlgorithms.isPalindrome("a"));
-        System.out.println("Is aba a palindrome? " + recursiveAlgorithms.isPalindrome("aba"));
-        System.out.println("Is ab a palindrome? " + recursiveAlgorithms.isPalindrome("ab"));
-        System.out.println();
+        for (String j : testArray) {
+            if (recursiveAlgorithms.isPalindrome(j)) {
+                System.out.println(j + ": is a palindrome");
+            } else {
+                System.out.println(j + ": is not a palindrome");
+            }
+        }
 
         this.recursiveRuntime = System.nanoTime() - this.initialTime; //Calculating the runtime of the recursive method
 
-        System.out.println("Checking if string is a palindrome using the iterative algorithm...");
+        System.out.println("Checking 20 strings using ispalindrome iterative algorithm...");
+
         this.initialTime = System.nanoTime(); //Setting the initial time to current system time
 
-        System.out.println("Is moon a palindrome? " + iterativeAlgorithms.nisPalindrome("moon"));
-        System.out.println("Is noon a palindrome? " + iterativeAlgorithms.nisPalindrome("noon"));
-        System.out.println("Is a a palindrome? " + iterativeAlgorithms.nisPalindrome("a"));
-        System.out.println("Is aba a palindrome? " + iterativeAlgorithms.nisPalindrome("aba"));
-        System.out.println("Is ab a palindrome? " + iterativeAlgorithms.nisPalindrome("ab"));
-        System.out.println();
+        for (String j : testArray) {
+            if (iterativeAlgorithms.nisPalindrome(j)) {
+                System.out.println(j + ": is a palindrome");
+            } else {
+                System.out.println(j + ": is not a palindrome");
+            }
+        }
 
         this.iterativeRuntime = System.nanoTime() - this.initialTime; //Calculating the runtime of the iterative method
 
@@ -99,19 +130,44 @@ public class runtimeTest {
     }
 
     public void binarySearchRuntime() {
-        int intarray[] = new int[1000];
+        int[] intArray = new int[1000];
+        int[] testArray = new int[20];
 
-        for (int i = 1; i < intarray.length; i++) {
-            intarray[i] = i * 3;
+        for (int i = 1; i < intArray.length; i++) {
+            intArray[i] = i * 3;
         }
 
-        System.out.println("Performing recursive binary search using recursive algorithm...");
+        for (int i = 0; i < testArray.length; i++) {
+            testArray[i] = (int) (Math.random() * 3000);
+        }
+
+        System.out.println("Performing binary search using recursive algorithm...");
         this.initialTime = System.nanoTime(); //Setting the initial time to current system time
 
-        recursiveAlgorithms.recursiveBinarySearch(intarray, 2,3,4);
+        for (int j : testArray) {
+            if (recursiveAlgorithms.recursiveBinarySearch(intArray, j) == -1) {
+                System.out.println(j + " was not located in the list");
+            } else {
+                System.out.println(j + " was located in the list at index: " + recursiveAlgorithms.recursiveBinarySearch(intArray, j));
+            }
+        }
 
         this.recursiveRuntime = System.nanoTime() - this.initialTime; //Calculating the runtime of the recursive method
 
+        System.out.println("Performing binary search using iterative algorithm...");
+        this.initialTime = System.nanoTime(); //Setting the initial time to current system time
+
+        for (int j : testArray) {
+            if (iterativeAlgorithms.nBinarySearch(intArray, j) == -1) {
+                System.out.println(j + " was not located in the list");
+            } else {
+                System.out.println(j + " was located in the list at index: " + iterativeAlgorithms.nBinarySearch(intArray, j));
+            }
+        }
+
+        this.iterativeRuntime = System.nanoTime() - this.initialTime; //Calculating the runtime of the
+
         System.out.println("Recursive Method Runtime: " + this.recursiveRuntime + " ns");
+        System.out.println("Iterative Method Runtime: " + this.iterativeRuntime + " ns");
     }
 }
